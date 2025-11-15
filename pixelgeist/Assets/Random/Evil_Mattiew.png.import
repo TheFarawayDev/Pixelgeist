@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c4ycmhdkbnebe"
-path="res://.godot/imported/wall-test1.png-3cedadcb2de770f54e9effe10e2ec64d.ctex"
+uid="uid://dy8pvwhjgd72d"
+path="res://.godot/imported/Evil_Mattiew.png-68bf3b3554406b53c43202f9ed1a53e4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/wall-test1.png"
-dest_files=["res://.godot/imported/wall-test1.png-3cedadcb2de770f54e9effe10e2ec64d.ctex"]
+source_file="res://Assets/Random/Evil_Mattiew.png"
+dest_files=["res://.godot/imported/Evil_Mattiew.png-68bf3b3554406b53c43202f9ed1a53e4.ctex"]
 
 [params]
 
