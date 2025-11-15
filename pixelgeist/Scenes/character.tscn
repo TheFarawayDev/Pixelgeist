@@ -1,7 +1,12 @@
-[gd_scene load_steps=6 format=3 uid="uid://bqd54k7jo11xa"]
+[gd_scene load_steps=11 format=3 uid="uid://bqd54k7jo11xa"]
 
 [ext_resource type="Texture2D" uid="uid://cvinmhq2bxfu6" path="res://Assets/Good_Mattiew.png" id="1_pjt0s"]
 [ext_resource type="Script" uid="uid://di1jn5pisb3c0" path="res://Scenes/character.gd" id="1_ushfy"]
+[ext_resource type="Texture2D" uid="uid://cg7phvk8ikfbl" path="res://Assets/Player Sprites/Player1.png" id="2_reotu"]
+[ext_resource type="Texture2D" uid="uid://f24bl21fdaxj" path="res://Assets/Player Sprites/Player2.png" id="3_a5ess"]
+[ext_resource type="Texture2D" uid="uid://bro5rmv76kyac" path="res://Assets/Player Sprites/Player3.png" id="4_wbia7"]
+[ext_resource type="Texture2D" uid="uid://cb7db8sc66si1" path="res://Assets/Player Sprites/Player4.png" id="5_kq7hj"]
+[ext_resource type="Texture2D" uid="uid://6ac0tr0m1nor" path="res://Assets/Player Sprites/Player5.png" id="6_7iw6i"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wfnr8"]
 atlas = ExtResource("1_pjt0s")
@@ -11,6 +16,26 @@ region = Rect2(0, 0, 433, 577)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("2_reotu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_a5ess")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_wbia7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kq7hj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_7iw6i")
+}],
+"loop": true,
+"name": &"main",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_wfnr8")
 }],
 "loop": true,
@@ -18,18 +43,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_wfnr8"]
-radius = 138.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_reotu"]
+size = Vector2(8, 8.00001)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_ushfy")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(568, 341)
+texture_filter = 3
+position = Vector2(584, 325)
+scale = Vector2(5, 4.9999976)
 sprite_frames = SubResource("SpriteFrames_px5sl")
-animation = &"placeholder"
+animation = &"main"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(542, 223)
-shape = SubResource("CircleShape2D_wfnr8")
+position = Vector2(584, 325)
+scale = Vector2(4.999999, 4.9999976)
+shape = SubResource("RectangleShape2D_reotu")
