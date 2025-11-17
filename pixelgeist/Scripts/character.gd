@@ -1,4 +1,5 @@
 #TheFarawayDev Was Somewhere!
+#no he wasn't
 
 extends CharacterBody2D
 
@@ -11,5 +12,13 @@ func _physics_process(delta: float) -> void:
 		velocity = input_direction.normalized() * speed
 	else:
 		velocity = Vector2.ZERO
+	
 
 	move_and_slide()
+
+
+func _on_check_button_toggled(toggled_on: bool) -> void:
+	if toggled_on == true:
+		$Camera2D/lighting.color.a = 0
+	else:
+		$Camera2D/lighting.color.a = .5
