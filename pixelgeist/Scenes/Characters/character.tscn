@@ -1,0 +1,37 @@
+[gd_scene load_steps=7 format=3 uid="uid://bqd54k7jo11xa"]
+
+[ext_resource type="Script" uid="uid://ddklw7cohkh3k" path="res://Scripts/character.gd" id="1_ushfy"]
+[ext_resource type="Texture2D" uid="uid://cg7phvk8ikfbl" path="res://Assets/Player Sprites/Player1.png" id="2_reotu"]
+[ext_resource type="Script" uid="uid://dief3dt5ktd0k" path="res://Scenes/Characters/flashlight.gd" id="3_lmtek"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_lkv7d"]
+size = Vector2(24, 24)
+
+[sub_resource type="Gradient" id="Gradient_eu1pv"]
+offsets = PackedFloat32Array(0, 0.6666667)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_lmtek"]
+gradient = SubResource("Gradient_eu1pv")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
+[node name="character-main" type="CharacterBody2D"]
+script = ExtResource("1_ushfy")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_lkv7d")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(3, 3)
+texture = ExtResource("2_reotu")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+[node name="PointLight2D" type="PointLight2D" parent="."]
+scale = Vector2(6, 6)
+energy = 0.4
+shadow_enabled = true
+texture = SubResource("GradientTexture2D_lmtek")
+script = ExtResource("3_lmtek")
