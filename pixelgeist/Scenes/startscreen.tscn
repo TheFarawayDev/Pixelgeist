@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://bywje4k1odhra"]
 
-[ext_resource type="Script" uid="uid://16jtyj104vec" path="res://Scenes/startscreen.gd" id="1_0m81h"]
+[ext_resource type="Script" uid="uid://16jtyj104vec" path="res://Scripts/startscreen.gd" id="1_0m81h"]
 [ext_resource type="VideoStream" uid="uid://cccxqvdmgvgvf" path="res://Assets/pixelgeist startup.ogv" id="2_c51vb"]
 
 [node name="Control" type="Control"]
