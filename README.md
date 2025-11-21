@@ -1,6 +1,6 @@
 **Phases:**
 --
-![Phase 1 (Early Development)](https://img.shields.io/badge/Phase%201%20(Early%20Development)-45%25-blue) 
+![Phase 1 (Early Development)](https://img.shields.io/badge/Phase%201%20(Early%20Development)-89%25-blue) 
 > ![Lighting Progress](https://img.shields.io/badge/Lighting%20Progress-91%25-2E7D32) \
 > ![Player Mechanics Progress](https://img.shields.io/badge/Player%20Mechanics%20Progress-100%25-2E7D32) \
 > ![UI Progress](https://img.shields.io/badge/UI%20Progress-72%25-8BC34A) \
