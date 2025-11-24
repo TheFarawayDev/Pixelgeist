@@ -1,6 +1,6 @@
 [gd_scene load_steps=16 format=3 uid="uid://bywje4k1odhra"]
 
-[ext_resource type="Script" uid="uid://16jtyj104vec" path="res://Scenes/startscreen.gd" id="1_ghw46"]
+[ext_resource type="Script" uid="uid://16jtyj104vec" path="res://Scripts/startscreen.gd" id="1_ghw46"]
 [ext_resource type="Texture2D" uid="uid://1sjpaq4gkhru" path="res://Assets/Tv.png" id="2_df05h"]
 [ext_resource type="Texture2D" uid="uid://b7ntks8fosdbl" path="res://Assets/TvMenus.png" id="3_8um5k"]
 [ext_resource type="Texture2D" uid="uid://wrdhebwoeq36" path="res://Assets/remote.png" id="4_xim88"]
@@ -180,7 +180,6 @@ label_settings = SubResource("LabelSettings_xim88")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(576, 335)
-zoom = Vector2(2.5, 2.5)
 
 [connection signal="pressed" from="Up_Button" to="." method="_on_up_button_pressed"]
 [connection signal="pressed" from="Down_Button" to="." method="_on_down_button_pressed"]
