@@ -14,12 +14,12 @@ colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_lmtek"]
 gradient = SubResource("Gradient_eu1pv")
 fill = 1
-fill_from = Vector2(0.5, 0.5)
+fill_from = Vector2(0.50934577, 0.47196263)
 
 [node name="character-main" type="CharacterBody2D"]
 script = ExtResource("1_ushfy")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+[node name="collider" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_lkv7d")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
@@ -29,7 +29,8 @@ texture = ExtResource("2_reotu")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(2.5, 2.5)
-[node name="PointLight2D" type="PointLight2D" parent="."]
+
+[node name="light" type="PointLight2D" parent="."]
 scale = Vector2(6, 6)
 energy = 0.4
 shadow_enabled = true
