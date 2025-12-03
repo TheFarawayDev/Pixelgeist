@@ -9,14 +9,6 @@ var current_tween: Tween
 
 func _ready():
 	color = specific_color
-	
-	GameManager.hunting_state_changed.connect(_on_global_hunting_update)
-
-func _on_global_hunting_update(is_hunting: bool):
-	if is_hunting:
-		color = hunting_color
-	else:
-		color = specific_color
 
 func snap_off():
 	if current_tween: current_tween.kill()
