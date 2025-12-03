@@ -1,13 +1,17 @@
-[gd_scene load_steps=22 format=4 uid="uid://8kc1tlafnv58"]
+[gd_scene load_steps=26 format=4 uid="uid://8kc1tlafnv58"]
 
-[ext_resource type="Texture2D" uid="uid://cqdubyrmstocv" path="res://Assets/wall-test.png" id="1_dk0jp"]
-[ext_resource type="Texture2D" uid="uid://d2h5uwjxrjo43" path="res://Assets/wall-test2.png" id="2_wvth2"]
-[ext_resource type="PackedScene" uid="uid://bqd54k7jo11xa" path="res://Scenes/Characters/character.tscn" id="3_7v6nq"]
-[ext_resource type="PackedScene" uid="uid://ccwaikt28c21m" path="res://Scenes/Characters/powerbox.tscn" id="4_wvth2"]
-[ext_resource type="Script" uid="uid://ct68ftvcwupgf" path="res://Scenes/point_light_2d.gd" id="5_7v6nq"]
+[ext_resource type="Texture2D" uid="uid://cqdubyrmstocv" path="res://Assets/wall-test.png" id="1_ck2q5"]
+[ext_resource type="Texture2D" uid="uid://d2h5uwjxrjo43" path="res://Assets/wall-test2.png" id="2_sbucg"]
+[ext_resource type="PackedScene" uid="uid://bqd54k7jo11xa" path="res://Scenes/Characters/character.tscn" id="3_pdp6j"]
+[ext_resource type="PackedScene" uid="uid://ccwaikt28c21m" path="res://Scenes/Objects/powerbox.tscn" id="4_tosav"]
+[ext_resource type="Script" uid="uid://bvpabe8fs1dey" path="res://Scripts/Test-Map/Lighting/test-map-lights-2.gd" id="5_trbpv"]
+[ext_resource type="Texture2D" uid="uid://b6pi127pqneqr" path="res://Assets/Random/power-panel1.png" id="6_wrng1"]
+[ext_resource type="Texture2D" uid="uid://bnqhgoy0ft44p" path="res://Assets/Random/power-panel2.png" id="7_rhsyf"]
+[ext_resource type="Script" uid="uid://dopd25g0jl0pd" path="res://Scripts/Test-Map/Lighting/test-map-lights-1.gd" id="8_drddg"]
+[ext_resource type="Script" uid="uid://ct68ftvcwupgf" path="res://Scripts/Global/point_light_2d.gd" id="9_st2ga"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_31xbh"]
-texture = ExtResource("1_dk0jp")
+texture = ExtResource("1_ck2q5")
 texture_region_size = Vector2i(40, 40)
 0:0/0 = 0
 1:0/0 = 0
@@ -55,7 +59,7 @@ polygon = PackedVector2Array(-20, -20, 20, -20, 20, 20, -20, 20)
 polygon = PackedVector2Array(-20, -20, 20, -20, 20, 20, -20, 20)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fkk5g"]
-texture = ExtResource("2_wvth2")
+texture = ExtResource("2_sbucg")
 texture_region_size = Vector2i(40, 40)
 0:0/0 = 0
 0:0/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_dk0jp")
@@ -115,58 +119,72 @@ tile_map_data = PackedByteArray("AAD///7/AQAIAAAAAAAAAP7/AQAIAAAAAAABAP7/AQAFAAA
 tile_set = SubResource("TileSet_7lcqw")
 navigation_enabled = false
 
-[node name="character-main" parent="." instance=ExtResource("3_7v6nq")]
+[node name="character-main" parent="." instance=ExtResource("3_pdp6j")]
 
-[node name="Powerbox" parent="." instance=ExtResource("4_wvth2")]
-position = Vector2(748, -48)
+[node name="Powerbox" parent="." instance=ExtResource("4_tosav")]
+position = Vector2(-32, 192)
+
+[node name="power-switch2" parent="." instance=ExtResource("4_tosav")]
+position = Vector2(128, 232)
+script = ExtResource("5_trbpv")
+target_group = "Test-Map-Lights-2"
+sprite_on = ExtResource("6_wrng1")
+sprite_off = ExtResource("7_rhsyf")
+
+[node name="power-switch" parent="." instance=ExtResource("4_tosav")]
+position = Vector2(128, 132)
+script = ExtResource("8_drddg")
+target_group = "Test-Map-Lights-1"
+sprite_on = ExtResource("6_wrng1")
+sprite_off = ExtResource("7_rhsyf")
 
 [node name="darkness" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
 
-[node name="light-4" type="PointLight2D" parent="."]
-position = Vector2(295, 379)
+[node name="light-4" type="PointLight2D" parent="." groups=["Test-Map-Lights-2"]]
+position = Vector2(169, 289)
 scale = Vector2(4.027372, 3.7129905)
 color = Color(1, 0.74509805, 0.5803922, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_wvth2")
-script = ExtResource("5_7v6nq")
+script = ExtResource("9_st2ga")
 
-[node name="light-5" type="PointLight2D" parent="."]
-position = Vector2(921.24524, 383.7098)
-scale = Vector2(4.554836, 4.740931)
+[node name="light-5" type="PointLight2D" parent="." groups=["Test-Map-Lights-2"]]
+position = Vector2(903.5, 370.20978)
+scale = Vector2(5.1093745, 5.162806)
 color = Color(1, 0.74509805, 0.5803922, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_wvth2")
-script = ExtResource("5_7v6nq")
+script = ExtResource("9_st2ga")
 
-[node name="light-6" type="PointLight2D" parent="."]
-position = Vector2(604.00006, 371)
-scale = Vector2(3.6523674, 4.100588)
+[node name="light-6" type="PointLight2D" parent="." groups=["Test-Map-Lights-2"]]
+position = Vector2(555.06213, 372.39056)
+scale = Vector2(5.2168074, 5.4565434)
 color = Color(1, 0.74509805, 0.5803922, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_wvth2")
-script = ExtResource("5_7v6nq")
+script = ExtResource("9_st2ga")
 
-[node name="light-3" type="PointLight2D" parent="."]
-position = Vector2(592, 46.000004)
-scale = Vector2(4.1973867, 4.1883545)
+[node name="light-3" type="PointLight2D" parent="." groups=["Test-Map-Lights-1"]]
+position = Vector2(547.6582, 65.986336)
+scale = Vector2(5.5830684, 4.8129272)
 color = Color(1, 0.74509805, 0.5803922, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_wvth2")
-script = ExtResource("5_7v6nq")
+script = ExtResource("9_st2ga")
 
-[node name="light-2" type="PointLight2D" parent="."]
-position = Vector2(911.99994, 52.000004)
-scale = Vector2(3.9433472, 3.9218452)
+[node name="light-1" type="PointLight2D" parent="." groups=["Test-Map-Lights-1"]]
+position = Vector2(169, 83)
+scale = Vector2(3.2031238, 3.2968748)
 color = Color(1, 0.74509805, 0.5803922, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_wvth2")
-script = ExtResource("5_7v6nq")
+script = ExtResource("9_st2ga")
 
-[node name="light-1" type="PointLight2D" parent="."]
-position = Vector2(278, 49)
-scale = Vector2(3.2031236, 3.2968745)
+[node name="light-2" type="PointLight2D" parent="." groups=["Test-Map-Lights-1"]]
+position = Vector2(885.5935, 73.75049)
+scale = Vector2(4.768548, 4.6015477)
 color = Color(1, 0.74509805, 0.5803922, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_wvth2")
-script = ExtResource("5_7v6nq")
+script = ExtResource("9_st2ga")

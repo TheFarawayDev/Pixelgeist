@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ddklw7cohkh3k" path="res://Scripts/character.gd" id="1_ushfy"]
 [ext_resource type="Texture2D" uid="uid://cg7phvk8ikfbl" path="res://Assets/Player Sprites/Player1.png" id="2_reotu"]
-[ext_resource type="Script" uid="uid://dief3dt5ktd0k" path="res://Scenes/Characters/flashlight.gd" id="3_lmtek"]
+[ext_resource type="Script" uid="uid://dief3dt5ktd0k" path="res://Scripts/Global/flashlight.gd" id="3_lmtek"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lkv7d"]
 size = Vector2(24, 24)

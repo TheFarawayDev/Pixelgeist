@@ -3,28 +3,20 @@ extends PointLight2D
 @export var fade_duration: float = 2.0
 @export var target_energy: float = 1.0
 @export var specific_color: Color = Color("ffbe94")
+@export var hunting_color: Color = Color("cc0006ff")
 
 var current_tween: Tween
 
 func _ready():
 	color = specific_color
 	
-	# 1. Connect to the GameManager signal
-	# This ensures the light reacts when the switch is flipped later
-	GameManager.power_state_changed.connect(_on_global_power_update)
-	
-	# 2. Initial State Check
-	# This ensures the light is correct if the scene loads and power is ALREADY on
-	_on_global_power_update(GameManager.is_power_on)
+	GameManager.hunting_state_changed.connect(_on_global_hunting_update)
 
-# This function runs whenever the GameManager signal fires
-func _on_global_power_update(is_on: bool):
-	if is_on:
-		fade_on()
+func _on_global_hunting_update(is_hunting: bool):
+	if is_hunting:
+		color = hunting_color
 	else:
-		snap_off()
-
-# --- Visual Logic (Same as before) ---
+		color = specific_color
 
 func snap_off():
 	if current_tween: current_tween.kill()
