@@ -11,13 +11,19 @@ config_version=5
 [application]
 
 config/name="Pixelgeist"
-run/main_scene="uid://bywje4k1odhra"
+run/main_scene="res://Scenes/mainmenuv2.tscn"
 config/features=PackedStringArray("4.5", "GL Compatibility")
 config/icon="uid://vvhndkm4m1np"
+config/macos_native_icon="uid://vvhndkm4m1np"
+config/windows_native_icon="uid://vvhndkm4m1np"
 
 [autoload]
 
 GameManager="*res://Scripts/Global/GameManager.gd"
+
+[display]
+
+window/size/resizable=false
 
 [input]
 

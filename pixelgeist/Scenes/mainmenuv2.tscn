@@ -1,0 +1,126 @@
+[gd_scene load_steps=15 format=3 uid="uid://dex2wd2ybtja1"]
+
+[ext_resource type="Texture2D" uid="uid://637ccg3jwsv2" path="res://Assets/tvremake.png" id="1_87dxr"]
+[ext_resource type="Script" uid="uid://c67nfjjk574ht" path="res://Scenes/mainmenuv_2.gd" id="1_dgujf"]
+[ext_resource type="Texture2D" uid="uid://cldf4y566nrax" path="res://Assets/remotev2.png" id="2_5dolv"]
+[ext_resource type="Texture2D" uid="uid://c1d6un25jl4ui" path="res://Assets/TvOnRemake.png" id="2_qqrb1"]
+[ext_resource type="Texture2D" uid="uid://v1kqtkix4ul8" path="res://Assets/onbutton2.png" id="5_jhss2"]
+[ext_resource type="Texture2D" uid="uid://dgiim7q6bat8p" path="res://Assets/onbutton1.png" id="6_ey7xy"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dgujf"]
+atlas = ExtResource("2_qqrb1")
+region = Rect2(24, 0, 24, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5dolv"]
+atlas = ExtResource("1_87dxr")
+region = Rect2(0, 0, 24, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_srd61"]
+atlas = ExtResource("2_qqrb1")
+region = Rect2(72, 0, 24, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_dgujf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgujf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dolv")
+}],
+"loop": false,
+"name": &"off",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5dolv")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dgujf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_srd61")
+}],
+"loop": false,
+"name": &"on",
+"speed": 2.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_30ks4"]
+atlas = ExtResource("5_jhss2")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sqc1q"]
+atlas = ExtResource("6_ey7xy")
+
+[sub_resource type="Gradient" id="Gradient_5dolv"]
+offsets = PackedFloat32Array(0, 0.8)
+colors = PackedColorArray(1, 1, 1, 1, 0, 0, 0, 1)
+metadata/_snap_enabled = true
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qqrb1"]
+gradient = SubResource("Gradient_5dolv")
+fill = 1
+fill_from = Vector2(0.4813084, 0.46728972)
+fill_to = Vector2(0, 0)
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_dgujf")
+
+[node name="TempBackground" type="ColorRect" parent="."]
+offset_left = -261.0
+offset_top = -144.0
+offset_right = 1479.0
+offset_bottom = 806.0
+color = Color(0.30312884, 0.22605687, 0.117674395, 1)
+metadata/_edit_use_anchors_ = true
+
+[node name="Tv" type="AnimatedSprite2D" parent="."]
+position = Vector2(577, 326)
+scale = Vector2(50, 50)
+sprite_frames = SubResource("SpriteFrames_dgujf")
+animation = &"on"
+
+[node name="Camera2D" type="Camera2D" parent="Tv"]
+position = Vector2(-0.040031433, 0.019996643)
+zoom = Vector2(0.7, 0.7)
+
+[node name="Remotev2" type="Sprite2D" parent="."]
+position = Vector2(1157, 764.00006)
+scale = Vector2(30, 30)
+texture = ExtResource("2_5dolv")
+
+[node name="Onbutton1" type="TextureButton" parent="."]
+offset_left = 1082.0
+offset_top = 344.0
+offset_right = 1084.0
+offset_bottom = 346.0
+scale = Vector2(30, 30)
+texture_normal = SubResource("AtlasTexture_30ks4")
+stretch_mode = 0
+
+[node name="Onbutton2" type="TextureButton" parent="."]
+offset_left = 77.99999
+offset_top = 626.0
+offset_right = 79.99999
+offset_bottom = 627.0
+scale = Vector2(50, 50)
+texture_normal = SubResource("AtlasTexture_sqc1q")
+stretch_mode = 0
+
+[node name="Dark" type="CanvasModulate" parent="."]
+color = Color(0, 0, 0, 1)
+
+[node name="Light" type="PointLight2D" parent="."]
+position = Vector2(577.00006, 326)
+scale = Vector2(28.324217, 18.035156)
+texture = SubResource("GradientTexture2D_qqrb1")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 568.0
+offset_top = -1061.0
+offset_right = 585.0
+offset_bottom = -1033.0
+text = "HI"
+
+[connection signal="pressed" from="Onbutton1" to="." method="_on_onbutton_1_pressed"]
