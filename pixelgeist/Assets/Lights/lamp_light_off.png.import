@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c5gqx00v0riuv"
-path="res://.godot/imported/PowerButton.png-6794927e042305b6ef680643a935ed96.ctex"
+uid="uid://cpx1g5thilevi"
+path="res://.godot/imported/lamp_light_off.png-791a124a4e6d431906981cf0c179b9b7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PowerButton.png"
-dest_files=["res://.godot/imported/PowerButton.png-6794927e042305b6ef680643a935ed96.ctex"]
+source_file="res://Assets/Lights/lamp_light_off.png"
+dest_files=["res://.godot/imported/lamp_light_off.png-791a124a4e6d431906981cf0c179b9b7.ctex"]
 
 [params]
 

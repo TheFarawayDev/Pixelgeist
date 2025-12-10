@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baabv4kacd6bx"
-path="res://.godot/imported/lrudbutton.png-d445a87f3d27c7e674b814296d342a0f.ctex"
+uid="uid://e6wvvj7v7hac"
+path="res://.godot/imported/wall_light_on.png-74c60ab1b70a4c1eaabb3bc1eadc7f97.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/lrudbutton.png"
-dest_files=["res://.godot/imported/lrudbutton.png-d445a87f3d27c7e674b814296d342a0f.ctex"]
+source_file="res://Assets/Lights/wall_light_on.png"
+dest_files=["res://.godot/imported/wall_light_on.png-74c60ab1b70a4c1eaabb3bc1eadc7f97.ctex"]
 
 [params]
 
