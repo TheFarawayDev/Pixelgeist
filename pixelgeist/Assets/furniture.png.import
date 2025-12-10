@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b7ntks8fosdbl"
-path="res://.godot/imported/TvMenus.png-4a33a2724b0c5ff9d211b7b6bd1f7d43.ctex"
+uid="uid://ccttjxec66myu"
+path="res://.godot/imported/furniture.png-d31b9a55cc7de7948bed19733ac4d88f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/TvMenus.png"
-dest_files=["res://.godot/imported/TvMenus.png-4a33a2724b0c5ff9d211b7b6bd1f7d43.ctex"]
+source_file="res://Assets/furniture.png"
+dest_files=["res://.godot/imported/furniture.png-d31b9a55cc7de7948bed19733ac4d88f.ctex"]
 
 [params]
 

@@ -1,7 +1,5 @@
 extends Area2D
 
-# ERROR FIX: Use 'preload' to load specific files by their path
-# We don't need '@export' anymore because we are hard-coding the paths here.
 var sprite_on = preload("res://Assets/Random/power-panel1.png")
 var sprite_off = preload("res://Assets/Random/power-panel2.png")
 
